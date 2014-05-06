@@ -27,6 +27,6 @@ plot(hpc$date.time,hpc$Global_active_power,type="n",
 lines(hpc$date.time,hpc$Global_active_power)
 
 ## copy to png file
-dev.copy(png,file="Plot2.png")
+dev.copy(png,file="plot2.png")
 dev.off()
                             
