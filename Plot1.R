@@ -1,6 +1,6 @@
-###
+####
 # Plot 1
-###
+####
 
 ## read in power consumption data file
 hpc <- read.csv("./household_power_consumption.txt",sep=";",
