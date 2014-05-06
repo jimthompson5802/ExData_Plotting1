@@ -21,12 +21,12 @@ hpc <- hpc[as.Date(hpc$Date,"%d/%m/%Y") == as.Date("2007-2-1") |
 hpc$date.time <- strptime(paste(hpc$Date,hpc$Time,sep=" "),"%d/%m/%Y %H:%M:%S")
 str(hpc)
 
-## generate Plot 1
+## generate Plot 
 hist(hpc$Global_active_power,col="red",
      main="Global Active Power",
      xlab="Global Active Power (kilowatts)")
 
 ## copy to png file
-dev.copy(png,file="Plot1.png")
+dev.copy(png,file="plot1.png")
 dev.off()
                             
