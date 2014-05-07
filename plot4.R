@@ -49,7 +49,7 @@ lines(hpc$date.time,hpc$Sub_metering_3,col="blue")
 ## add legend for the graph
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
        lty=1,col=c("black","red","blue"),
-       cex=1,
+       cex=0.9,
        box.lty="blank",
        inset=0.01,
        xjust=1)
