@@ -21,18 +21,18 @@ hpc <- hpc[as.Date(hpc$Date,"%d/%m/%Y") == as.Date("2007-2-1") |
 hpc$date.time <- strptime(paste(hpc$Date,hpc$Time,sep=" "),"%d/%m/%Y %H:%M:%S")
 str(hpc)
 
-## generate Plot
+## generate Plots
+
+## open png file graphic device
+png(file="plot4.png")
 
 ## set up 2-by-2 plot area
-par(mfcol=c(2,2))
+par(mfcol=c(2,2),mar=c(4,4,2,2))
 
-
-# ## open png file graphic device
-# png(file="plot4.png")
 
 ## generate first plot
 plot(hpc$date.time,hpc$Global_active_power,type="n",
-     ylab="Global Active Power (kilowatts)",xlab="")
+     ylab="Global Active Power",xlab="")
 lines(hpc$date.time,hpc$Global_active_power)
 
 
@@ -49,8 +49,26 @@ lines(hpc$date.time,hpc$Sub_metering_3,col="blue")
 ## add legend for the graph
 legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
        lty=1,col=c("black","red","blue"),
+       cex=1,
+       box.lty="blank",
+       inset=0.01,
        xjust=1)
 
-# ## close graphic device
-# dev.off()
+## generate third plot
+plot(hpc$date.time,hpc$Voltage,type="n",
+     ylab="Voltage",xlab="datetime")
+
+## add line for each sub metering attribute
+lines(hpc$date.time,hpc$Voltage)
+
+## generate fourth plot
+plot(hpc$date.time,hpc$Global_reactive_power,type="n",
+     ylab="Global_reactive_power",xlab="datetime")
+
+## add line for each sub metering attribute
+lines(hpc$date.time,hpc$Global_reactive_power)
+
+
+## close graphic device
+dev.off()
                             
