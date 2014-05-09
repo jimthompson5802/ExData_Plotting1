@@ -2,6 +2,18 @@
 # Plot 3
 ###
 
+###
+# Data retrieved from
+#  https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+#
+# Description of the data can be found at
+#   https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption
+#
+# The data is downloaded and unzipped into the current working direcory to create
+# file household_power_consumption.txt.
+###
+
+
 ## read in power consumption data file
 hpc <- read.csv("./household_power_consumption.txt",sep=";",
                  colClasses=c("character","character",rep("numeric",7)),
