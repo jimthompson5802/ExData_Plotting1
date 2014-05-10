@@ -13,6 +13,15 @@
 # file household_power_consumption.txt.
 ###
 
+## Download the file
+file.url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip" 
+my.file <- "./exdata_data_housefold_power.consumption.zip" 
+
+setInternet2(TRUE) 
+download.file(file.url,my.file) 
+unzip(my.file)
+
+
 
 ## read in power consumption data file
 hpc <- read.csv("./household_power_consumption.txt",sep=";",
